@@ -29,6 +29,7 @@ typedef struct {
   float prob_right;
   char save_filename[MAX_FILENAME];
   int use_obstacles;
+  int obstacle_map[MAX_GRID_SIZE][MAX_GRID_SIZE];
   SimMode initial_mode;
 } ConfigMsg;
 
@@ -42,6 +43,7 @@ typedef struct {
   int step_count;
   int replication_id;
   int walker_id;
+  int total_replications;
 } StateUpdateMsg;
 
 typedef struct {
@@ -58,6 +60,7 @@ typedef struct {
   CellStats cells[STATS_CHUNK_SIZE];
   int total_replications_done;
   int total_replications_target;
+  int final_update;
 } StatsUpdateMsg;
 
 typedef enum {
